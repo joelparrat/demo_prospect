@@ -13,47 +13,31 @@ class DemoProspect extends Migration
      */
     public function up()
     {
-        Schema::create('commercial', function(Blueprint $table)
+        Schema::create('prospects', function(Blueprint $table)
         {
-            $table->increments('clef');
-            $table->string('login');
-            $table->string('password');
-            $table->string('prenom');
-            $table->string('nom');
-            $table->string('adr_numero');
-            $table->string('adr_rue');
-            $table->string('adr_codepostal');
-            $table->string('adr_ville');
+            $table->increments('id');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('birthday');
+            $table->string('job');
+            $table->string('company');
+            $table->string('add_number');
+            $table->string('add_street');
+            $table->string('add_zipcode');
+            $table->string('add_city');
+            $table->string('add_country');
             $table->string('telephone');
             $table->string('email')->unique();
+            $table->unsignedInteger('fid');
             $table->timestamps();
         });
         
-        Schema::create('prospect', function(Blueprint $table)
+        Schema::create('comments', function(Blueprint $table)
         {
-            $table->increments('clef');
-            $table->string('prenom');
-            $table->string('nom');
-            $table->string('naissance');
-            $table->string('profession');
-            $table->string('entreprise');
-            $table->string('adr_numero');
-            $table->string('adr_rue');
-            $table->string('adr_codepostal');
-            $table->string('adr_ville');
-            $table->string('adr_pays');
-            $table->string('telephone');
-            $table->string('email')->unique();
-            $table->unsignedInteger('fclef');
-            $table->timestamps();
-        });
-        
-        Schema::create('commentaire', function(Blueprint $table)
-        {
-            $table->increments('clef');
-            $table->string('titre');
-            $table->text('texte');
-            $table->unsignedInteger('fclef');
+            $table->increments('id');
+            $table->string('title');
+            $table->text('text');
+            $table->unsignedInteger('fid');
             $table->timestamps();
         });
     }
@@ -65,8 +49,7 @@ class DemoProspect extends Migration
      */
     public function down()
     {
-        Schema::drop('commercial');
-        Schema::drop('prospect');
-        Schema::drop('commentaire');
+        Schema::dropIfExists('prospects');
+        Schema::dropIfExists('comments');
     }
 }
