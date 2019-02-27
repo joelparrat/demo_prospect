@@ -8,7 +8,11 @@
         <title>@yield('title')</title>
 		<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
         <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-        <style> 
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="css/bootstrap/js/bootstrap.min.js"></script>
+        <link href="css/style.css" rel="stylesheet">
+        <!-- <style> 
         html{
             height:100%;
         }
@@ -26,9 +30,25 @@
         .listeAddresse {
             width:50em;
         }
-        </style>
+        </style> -->
     </head>
     <body>
-        @yield('content')
+        <div>
+            <a href="{{ route('login') }}" class="top-right log btn btn-light" style="margin-right: 135px; color: #4e413b;">Connexion</a>
+            <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'enregistrer</a>
+        </div>
+
+
+        <div class="grid">
+                <div class="title flex-center border-bottom border-secondary">
+                    Laravel
+                </div>
+
+                @yield('content')
+
+                <span class="footer"></span>
+                <div class="linkfooter">© 2018 Copyright: DemoProspect.fr
+                </div>
+        </div>
     </body>
 </html>
