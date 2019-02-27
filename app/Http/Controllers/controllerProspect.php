@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Prospect;
 
 class controllerProspect extends Controller
 {
@@ -13,7 +14,9 @@ class controllerProspect extends Controller
      */
     public function index()
     {
-        return view('prospect.listeAddresses', ['addresses' => $addresses]);    }
+        $prospects = Prospect::all();
+        return view('prospect.listProspect', ['prospects' => $prospects]);    
+    }
 
     /**
      * Show the form for creating a new resource.
