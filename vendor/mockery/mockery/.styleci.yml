@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 preset: psr2
 
 finder:
@@ -5,3 +6,12 @@ finder:
     - MethodWithHHVMReturnType.php
     - MockingParameterAndReturnTypesTest.php
     - SemiReservedWordsAsMethods.php
+=======
+preset: psr2
+
+finder:
+  not-name:
+    - MethodWithHHVMReturnType.php
+    - MockingParameterAndReturnTypesTest.php
+    - SemiReservedWordsAsMethods.php
+>>>>>>> 3fa1b243eb181f4e8afeaeda73ed33cdeb9b0ad5
