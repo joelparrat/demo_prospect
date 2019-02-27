@@ -13,7 +13,8 @@ class Prospect extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'birthday', 'job', 'company', 'add_number', 'add_street', 'add_zipcode', 'add_city', 'add_conutry', 'telephone', 'email',
+        'firstname', 'lastname', 'birthday', 'job', 'company', 'add_number', 
+        'add_street', 'add_zipcode', 'add_city', 'add_country', 'telephone', 'email',
     ];
     
     /**

@@ -49,7 +49,7 @@ class DatabaseSeeder extends Seeder
                 'add_country' => $faker->country,
                 'telephone' => $faker->phoneNumber,
                 'email' => $faker->unique()->email,
-                'fid' => $faker->numberBetween($min=0, $max=49)
+                'fid' => $faker->numberBetween($min=1, $max=50)
             ]);
         }
         
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
             DB::table('comments')->insert([ //,
                 'title' => $faker->firstName,
                 'text' => $faker->lastName,
-                'fid' => $faker->numberBetween($min=0, $max=199)
+                'fid' => $faker->numberBetween($min=1, $max=200)
             ]);
         }
     }
