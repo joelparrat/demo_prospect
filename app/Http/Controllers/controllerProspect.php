@@ -63,7 +63,8 @@ class controllerProspect extends Controller
      */
     public function edit($id)
     {
-        //
+        $prospect= Prospect::find($id);
+        return view('prospects.editProspect')->with('prospect', $prospect);
     }
 
     /**
@@ -87,6 +88,6 @@ class controllerProspect extends Controller
     public function destroy($id)
     {
         Prospect::find($id)->delete();
-        return redirect()->route('adresse.index');
+        return redirect()->route('prospect.index');
     }
 }
