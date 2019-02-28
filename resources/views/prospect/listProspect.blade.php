@@ -32,6 +32,7 @@
                     </tbody>
                 </table>
                 <a class="btn btn-dark" href="{{ route('home') }}" role="button">Return</a>
+                <a class="btn btn-dark" href="{{ route('home') }}" role="button">New prospect</a>
             </div>
         </div>
     </div>
