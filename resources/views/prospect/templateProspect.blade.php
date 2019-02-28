@@ -34,8 +34,9 @@
     </head>
     <body>
         <div>
-            <a href="{{ route('login') }}" class="top-right log btn btn-dark" style="margin-right: 135px; color: white;">Connexion</a>
-            <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'enregistrer</a>
+            <!-- <a href="{{ route('login') }}" class="top-right log btn btn-dark" style="margin-right: 135px; color: white;">Connexion</a>
+            <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'enregistrer</a> -->
+            
         </div>
 
 
@@ -43,6 +44,12 @@
                 <div class="title m-b-md flex-center border-bottom border-secondary">
                     Demo Prospect
                 </div>
+
+                <a class="log btn btn-dark" style="color: white; grid-area: 1/1/2/2; margin: auto 25px auto auto;" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">{{ __('Déconnexion') }}
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+            </form>
 
                 @yield('content')
 

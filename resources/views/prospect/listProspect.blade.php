@@ -5,10 +5,10 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <div class="row card text-white bg-dark mx-auto listProspect">
-            <h1 class="card-header">Liste de vos prospects</h1>
-            <div class="card-body">
+    <div class="container" style="margin-top: 20px; margin-bottom: 20px;">
+        <div class="row card text-white listProspect">
+            <h1 class="card-header rounded-top" style="background-color: #4e413b;">Liste de vos prospects</h1>
+            <div class="card-body" style="background-color: #857671;">
                 <table class="table">
                     <thead>
                         <tr>
@@ -26,7 +26,7 @@
                             <td>{{ $prospect->lastname }}</td>
                             <td>{{ $prospect->telephone }}</td>
                             <td>{{ $prospect->email }}</td>
-                            <td><a class="btn btn-primary" href="{{ route('home') }}" role="button">Details</a></td>
+                            <td><a class="btn btn-dark" href="{{ route('home') }}" role="button">Details</a></td>
                         </tr>
                         @endforeach
                     </tbody>
