@@ -6,12 +6,12 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         
         <title>@yield('title')</title>
-		<link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css" >
-        <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-        <link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+		<link href="{{ asset('../public/css/app.css') }}" rel="stylesheet" type="text/css" >
+        <script type="text/javascript" src="{{ asset('../public/js/app.js') }}"></script>
+        <link rel="stylesheet" type="text/css" href="../public/bootstrap/css/bootstrap.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="css/bootstrap/js/bootstrap.min.js"></script>
-        <link href="css/style.css" rel="stylesheet">
+        <script src="../public/bootstrap/js/bootstrap.min.js"></script>
+        <link href="../public/css/app.css" rel="stylesheet">
         <!-- <style> 
         html{
             height:100%;
@@ -40,14 +40,14 @@
 
 
         <div class="grid">
-                <div class="title flex-center border-bottom border-secondary">
-                    Laravel
+                <div class="title m-b-md flex-center border-bottom border-secondary">
+                    Demo Prospect
                 </div>
 
                 @yield('content')
 
                 <span class="footer"></span>
-                <div class="linkfooter">© 2018 Copyright: DemoProspect.fr
+                <div class="textfooter">© 2019 Copyright: DemoProspect.fr
                 </div>
         </div>
     </body>

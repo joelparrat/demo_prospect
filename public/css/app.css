@@ -20,7 +20,7 @@
             .grid { 
             	display: grid;
             	grid-template-columns: 100%;
-            	grid-template-rows: auto 300px 100px;
+            	grid-template-rows: auto auto 100px;
             }
 
             /*.full-height {
