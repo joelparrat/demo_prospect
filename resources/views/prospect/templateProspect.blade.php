@@ -34,7 +34,7 @@
     </head>
     <body>
         <div>
-            <a href="{{ route('login') }}" class="top-right log btn btn-light" style="margin-right: 135px; color: #4e413b;">Connexion</a>
+            <a href="{{ route('login') }}" class="top-right log btn btn-dark" style="margin-right: 135px; color: white;">Connexion</a>
             <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'enregistrer</a>
         </div>
 

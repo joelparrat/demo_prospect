@@ -45,7 +45,7 @@
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-primary" href="{{ route('home') }}" role="button">Retour</a>
+                <a class="btn btn-dark" href="{{ route('home') }}" role="button">Retour</a>
             </div>
         </div>
     </div>
