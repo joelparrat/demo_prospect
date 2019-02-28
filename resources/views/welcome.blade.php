@@ -23,7 +23,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}" class="top-right log btn btn-light" style="margin-right: 110px; color: #4e413b;">Connexion</a>
+                        <a href="{{ route('login') }}" class="top-right log btn btn-dark" style="margin-right: 110px; color: white;">Connexion</a>
 
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'inscrire</a>
@@ -36,6 +36,8 @@
                 <div class="title m-b-md flex-center border-bottom border-secondary">
                     Demo Prospect
                 </div>
+
+                <span style="height: 375px"></span>
 
                 <span class="footer"></span>
                 <div class="textfooter">© 2019 Copyright: DemoProspect.fr
