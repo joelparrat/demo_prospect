@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row card text-white bg-dark mx-auto listeAddresse">
+        <div class="row card text-white bg-dark mx-auto listProspect">
             <h1 class="card-header">Liste de vos prospects</h1>
             <div class="card-body">
                 <table class="table">
@@ -26,14 +26,12 @@
                             <td>{{ $prospect->lastname }}</td>
                             <td>{{ $prospect->telephone }}</td>
                             <td>{{ $prospect->email }}</td>
-                            <td><a class="btn btn-primary" href="{{ route('home') }}" role="button">Delete</a></td>
-                            <td><a class="btn btn-primary" href="{{ route('home') }}" role="button">Update</a></td>
                             <td><a class="btn btn-primary" href="{{ route('home') }}" role="button">Details</a></td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                <a class="btn btn-dark" href="{{ route('home') }}" role="button">Retour</a>
+                <a class="btn btn-dark" href="{{ route('home') }}" role="button">Return</a>
             </div>
         </div>
     </div>

@@ -77,7 +77,9 @@ class controllerProspect extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        Prospect::find($id)->update($data);
+        return redirect()->route('prospects.index');
     }
 
     /**

@@ -5,195 +5,101 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('New prospect') }}</div>
+    <div class="container">
+        <div class="row card text-white bg-dark mx-auto my-auto">
+            <h1 class="card-header">Update prospect</h1>
+            <div class="card-body">
+                <form action="{{ url('prospect/'.$prospect->id) }}" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('firstname') ? 'is-invalid' : '' }}" name="firstname" id="firstname" placeholder="First Name" value="{{ $prospect->firstname }}" required>
+                        @if ($errors->has('firstname'))
+                            <div class="invalid-feedback">{{ $errors->first('firstname') }}</div>
+                        @endif
+                    </div>
+                   
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('lastname') ? 'is-invalid' : '' }}" name="lastname" id="lastname" placeholder="Last Name" value="{{ $prospect->lastname }}" required>
+                        @if ($errors->has('lastname'))
+                            <div class="invalid-feedback">{{ $errors->first('lastname') }}</div>
+                        @endif
+                    </div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('birthday') ? 'is-invalid' : '' }}" name="birthday" id="birthday" placeholder="Birthday" value="{{ $prospect->birthday }}" required>
+                        @if ($errors->has('birthday'))
+                            <div class="invalid-feedback">{{ $errors->first('birthday') }}</div>
+                        @endif
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="firstname" class="col-md-4 col-form-label text-md-right">{{ __('First Name') }}</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('job') ? 'is-invalid' : '' }}" name="job" id="JOB" placeholder="Job" value="{{ $prospect->job }}" required>
+                        @if ($errors->has('job'))
+                            <div class="invalid-feedback">{{ $errors->first('job') }}</div>
+                        @endif
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="firstname" type="text" class="form-control{{ $errors->has('firstname') ? ' is-invalid' : '' }}" name="firstname" value="{{ old('firstname') }}" required autofocus>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('company') ? 'is-invalid' : '' }}" name="company" id="company" placeholder="Company" value="{{ $prospect->company }}" required>
+                        @if ($errors->has('company'))
+                            <div class="invalid-feedback">{{ $errors->first('company') }}</div>
+                        @endif
+                    </div>
 
-                                @if ($errors->has('firstname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('firstname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('add_number') ? 'is-invalid' : '' }}" name="add_number" id="add_number" placeholder="Number" value="{{ $prospect->add_number }}" required>
+                        @if ($errors->has('add_number'))
+                            <div class="invalid-feedback">{{ $errors->first('add_number') }}</div>
+                        @endif
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="lastname" class="col-md-4 col-form-label text-md-right">{{ __('Last Name') }}</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('add_street') ? 'is-invalid' : '' }}" name="add_street" id="add_street" placeholder="Street" value="{{ $prospect->add_street }}" required>
+                        @if ($errors->has('add_street'))
+                            <div class="invalid-feedback">{{ $errors->first('add_street') }}</div>
+                        @endif
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="lastname" type="text" class="form-control{{ $errors->has('lastname') ? ' is-invalid' : '' }}" name="lastname" value="{{ old('lastname') }}" required autofocus>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('add_zipcode') ? 'is-invalid' : '' }}" name="add_zipcode" id="add_zipcode" placeholder="Zip Code" value="{{ $prospect->add_zipcode }}" required>
+                        @if ($errors->has('add_zipcode'))
+                            <div class="invalid-feedback">{{ $errors->first('add_zipcode') }}</div>
+                        @endif
+                    </div>
 
-                                @if ($errors->has('lastname'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('lastname') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('add_city') ? 'is-invalid' : '' }}" name="add_city" id="add_city" placeholder="City" value="{{ $prospect->add_city }}" required>
+                        @if ($errors->has('add_city'))
+                            <div class="invalid-feedback">{{ $errors->first('add_city') }}</div>
+                        @endif
+                    </div>
 
-                        <div class="form-group row">
-                            <label for="birthday" class="col-md-4 col-form-label text-md-right">{{ __('Birthday') }}</label>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('add_country') ? 'is-invalid' : '' }}" name="add_country" id="add_country" placeholder="Country" value="{{ $prospect->add_country }}" required>
+                        @if ($errors->has('add_country'))
+                            <div class="invalid-feedback">{{ $errors->first('add_country') }}</div>
+                        @endif
+                    </div>
 
-                            <div class="col-md-6">
-                                <input id="birthday" type="text" class="form-control{{ $errors->has('birthday') ? ' is-invalid' : '' }}" name="birthday" value="{{ old('birthday') }}" required autofocus>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('telephone') ? 'is-invalid' : '' }}" name="telephone" id="telephone" placeholder="Phone" value="{{ $prospect->telephone }}" required>
+                        @if ($errors->has('telephone'))
+                            <div class="invalid-feedback">{{ $errors->first('telephone') }}</div>
+                        @endif
+                    </div>
 
-                                @if ($errors->has('birthday'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('birthday') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="job" type="text" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}" required autofocus>
-
-                                @if ($errors->has('job'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('job') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="company" class="col-md-4 col-form-label text-md-right">{{ __('Company') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="company" type="text" class="form-control{{ $errors->has('company') ? ' is-invalid' : '' }}" name="company" value="{{ old('company') }}" required autofocus>
-
-                                @if ($errors->has('company'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('company') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="number" class="col-md-4 col-form-label text-md-right">{{ __('Number') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="add_number" type="text" class="form-control{{ $errors->has('add_number') ? ' is-invalid' : '' }}" name="add_number" value="{{ old('add_number') }}" required autofocus>
-
-                                @if ($errors->has('add_number'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('add_number') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="street" class="col-md-4 col-form-label text-md-right">{{ __('Street') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="add_street" type="text" class="form-control{{ $errors->has('add_street') ? ' is-invalid' : '' }}" name="add_street" value="{{ old('add_street') }}" required autofocus>
-
-                                @if ($errors->has('add_street'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('add_street') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="zipcode" class="col-md-4 col-form-label text-md-right">{{ __('Zip Code') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="add_zipcode" type="text" class="form-control{{ $errors->has('add_zipcode') ? ' is-invalid' : '' }}" name="add_zipcode" value="{{ old('add_zipcode') }}" required autofocus>
-
-                                @if ($errors->has('add_zipcode'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('add_zipcode') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('City') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="add_city" type="text" class="form-control{{ $errors->has('add_city') ? ' is-invalid' : '' }}" name="add_city" value="{{ old('add_city') }}" required autofocus>
-
-                                @if ($errors->has('add_city'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('add_city') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="add_country" type="text" class="form-control{{ $errors->has('add_country') ? ' is-invalid' : '' }}" name="add_country" value="{{ old('add_country') }}" required autofocus>
-
-                                @if ($errors->has('add_country'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('add_country') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="telephone" type="text" class="form-control{{ $errors->has('telephone') ? ' is-invalid' : '' }}" name="telephone" value="{{ old('telephone') }}" required autofocus>
-
-                                @if ($errors->has('telephone'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('telephone') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Update') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" id="email" placeholder="E-mail" value="{{ $prospect->email }}" required>
+                        @if ($errors->has('email'))
+                            <div class="invalid-feedback">{{ $errors->first('email') }}</div>
+                        @endif
+                    </div>                    
+                    
+                    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Annuler</a>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                {{ method_field('put') }}
+                </form>
             </div>
         </div>
     </div>
-</div>
 @endsection
