@@ -14,8 +14,13 @@ class controllerProspect extends Controller
      */
     public function index()
     {
-        $prospects = Prospect::all();
-        return view('prospect.listProspect', ['prospects' => $prospects]);    
+        //$prospects = Prospect::all();
+        $prospects = Prospect::where('fid', auth()->id())
+                    ->orderBy ('lastname', 'asc')
+                    ->take(50)
+                    ->get();
+        return view('prospect.listProspect', ['prospects' => $prospects]);
+        
     }
 
     /**
@@ -25,7 +30,7 @@ class controllerProspect extends Controller
      */
     public function create()
     {
-        //
+        return view('prospect.creationProspect');
     }
 
     /**
