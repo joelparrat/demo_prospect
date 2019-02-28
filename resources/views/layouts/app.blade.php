@@ -52,21 +52,34 @@
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item" style="margin-right: -35px;">
-                                    <a class="nav-link log btn btn-dark btn-sm" style="color: white" href="{{ route('register') }}">{{ __("S'enregistrer") }}</a>
+                                    <a class="nav-link log btn btn-dark btn-sm" style="color: white" href="{{ route('register') }}">{{ __("S'inscrire") }}</a>
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item dropdown">
+
+                            <!-- <li class="nav-item">
+                                <a class="nav-link log btn btn-dark btn-sm" style="color: white" href="{{ route('register') }}">{{ Auth::user()->name }} <span class="caret"></span></a>
+                            </li>
+
+                            <li class="nav-item">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+                                </a> -->
 
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <li class="nav-item">
+                                    <a class="nav-link log btn btn-dark btn-sm" style="color: white" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Déconnexion') }}
+                                    </a>
+                                </li>
+
+                                <!-- <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                                        {{ __('Déconnexion') }}
+                                    </a> -->
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

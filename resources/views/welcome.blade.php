@@ -18,24 +18,26 @@
     </head>
     <body>
         <div>
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="top-right log btn btn-dark" style="margin-right: 110px; color: white;">Connexion</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="top-right log btn btn-dark" style="color: white;">S'inscrire</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+            
 
             <div class="content grid">
                 <div class="title m-b-md flex-center border-bottom border-secondary">
                     Demo Prospect
                 </div>
+
+                @if (Route::has('login'))
+                <div class="links" style="grid-area: 1/1/2/2; margin: auto 20px auto auto;">
+                    @auth
+                        <a href="{{ url('/home') }}">Home</a>
+                    @else
+                        <a href="{{ route('login') }}" class="log btn btn-dark" style="color: white; margin-right: 8px;">Connexion</a>
+
+                        @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="log btn btn-dark" style="color: white;">S'inscrire</a>
+                        @endif
+                    @endauth
+                </div>
+            @endif
 
                 <span style="height: 375px"></span>
 
