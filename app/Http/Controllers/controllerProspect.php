@@ -52,7 +52,8 @@ class controllerProspect extends Controller
      */
     public function show($id)
     {
-        //
+        $prospect= Prospect::find($id);
+        return view('prospect.detailProspect')->with('prospect', $prospect);
     }
 
     /**
@@ -64,7 +65,7 @@ class controllerProspect extends Controller
     public function edit($id)
     {
         $prospect= Prospect::find($id);
-        return view('prospects.editProspect')->with('prospect', $prospect);
+        return view('prospect.editProspect')->with('prospect', $prospect);
     }
 
     /**

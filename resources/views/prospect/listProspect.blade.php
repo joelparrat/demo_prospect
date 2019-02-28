@@ -21,6 +21,7 @@
                     <tbody>
                         @foreach ($prospects as $prospect)
                         <tr>
+                        	<td>{{ $prospect->id }}</td>
                             <td>{{ $prospect->firstname }}</td>
                             <td>{{ $prospect->lastname }}</td>
                             <td>{{ $prospect->telephone }}</td>
