@@ -64,8 +64,8 @@
   </tbody>
 </table>
 <form action="{{ url('prospects', ['id' => $prospect->id]) }}" method="post">
-     <a class="btn btn-primary" href="{{ route('home') }}" role="button">Return</a>
-<a class="btn btn-primary" href="{{ url('prospect/'.$prospect->id.'/edit') }}" role="button">Update</a>
+    <a class="btn btn-primary" href="{{ route('home') }}" role="button">Return</a>
+    <a class="btn btn-primary" href="{{ url('prospect/'.$prospect->id.'/edit') }}" role="button">Update</a>
     <input class="btn btn-primary" type="submit" value="Supprimer" />
    
     {{ method_field('delete') }}

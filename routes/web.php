@@ -20,3 +20,4 @@ Route::resource('prospect','controllerProspect');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
